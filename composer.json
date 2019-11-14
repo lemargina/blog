@@ -1,0 +1,17 @@
+{
+	"name" : "blog",
+	"require" : {
+		"php" : ">=5.3.0",
+		"slim/slim" : "2.*",
+		"slim/views" : "0.1.*",
+		"twig/twig" : "*",
+		"twig/extensions" : "*",
+		"illuminate/database" : "*",
+		"erusev/parsedown" : "*"
+	},
+	"autoload" : {
+		"classmap" : [
+			"src/models"
+		]
+	}
+}

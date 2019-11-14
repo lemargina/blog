@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th><span class="glyphicon glyphicon-th-large"></span></th>
+                <th>{{ include(template_from_string(lang.title)) }}</th>
+                <th>{{ include(template_from_string(lang.state)) }}</th>
+                <th>{{ include(template_from_string(lang.author)) }}</th>
+                <th>{{ include(template_from_string(lang.date)) }}</th>
+                <th>{{ include(template_from_string(lang.action)) }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for post in posts %}
+                <tr>
+                    <td>{{loop.index}}</td>
+                    <td><a href="{{ baseUrl() }}/post/{{post.id}}">{{post.title}}</a></td>
+                    <td>
+                        {% if post.active is sameas("true") %}
+                            {{ include(template_from_string(lang.activate)) }}/<a href="{{ baseUrl() }}/admin/posts/deactivate/{{post.id}}">{{ include(template_from_string(lang.deactivate)) }}</a>
+                        {% else %}
+                            <a href="{{ baseUrl() }}/admin/posts/activate/{{post.id}}">{{ include(template_from_string(lang.activate)) }}</a>/{{ include(template_from_string(lang.deactivate)) }}
+                        {% endif %}
+                    </td>
+                    <td>{{post.author}}</td>
+                    <td>{{post.date}}</td>
+                    <td><a href="{{ baseUrl() }}/admin/posts/edit/{{post.id}}">{{ include(template_from_string(lang.edit)) }}</a> | <a href="{{ baseUrl() }}/admin/posts/delete/{{post.id}}">{{ include(template_from_string(lang.delete)) }}</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

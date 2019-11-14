@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th><span class="glyphicon glyphicon-th-large"></span></th>
+                <th>{{ include(template_from_string(lang.username)) }}</th>
+                <th>{{ include(template_from_string(lang.createdat)) }}</th>
+                <th>{{ include(template_from_string(lang.action)) }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{loop.index}}</td>
+                    <td>{{user.username}}</td>
+                    
+                    <td><a href="{{ baseUrl() }}/admin/users/edit/{{user.id}}">{{ include(template_from_string(lang.edit)) }}</a> | <a href="{{ baseUrl() }}/admin/users/delete/{{user.id}}">{{ include(template_from_string(lang.delete)) }}</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

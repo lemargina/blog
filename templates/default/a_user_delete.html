@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <form class="form-signin" method="post" action="{{ baseUrl() }}/admin/users/delete/{{user_id}}">
+            <h2>{{ include(template_from_string(lang.deleteuser)) }} {{user_id}}</h2>
+            <h3>{{ include(template_from_string(lang.areyousure)) }}</h3>
+            <input type="hidden" name="_METHOD" value="DELETE"/>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">{{ include(template_from_string(lang.delete)) }}</button>
+        </form>
+    <div>
+{% endblock %}
