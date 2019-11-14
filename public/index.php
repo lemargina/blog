@@ -1,16 +1,11 @@
 <?php
+//define directories
 define("DS", DIRECTORY_SEPARATOR);
-define("ROUTEDIR", ROOT . "src" . DS . "routes" . DS);
+define("ROOT", realpath(dirname(__DIR__)) . DS);
 define("VENDORDIR", ROOT . "vendor" . DS);
-
+define("ROUTEDIR", ROOT . "src" . DS . "routes" . DS);
 define("TEMPLATEDIR", ROOT . "templates" . DS);
 define("LANGUAGEDIR", ROOT . "languages" . DS);
-
-
-//define directories
-
-define("ROOT", realpath(dirname(__DIR__)) . DS);
-
 
 /**
  * Include autoload file

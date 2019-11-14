@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `settings` (
 DELETE FROM `settings`;
 /*!40000 ALTER TABLE `settings` DISABLE KEYS */;
 INSERT INTO `settings` (`id`, `title`, `base_url`, `post_per_page`, `updated_at`) VALUES
-	(1, 'SlimBlog', 'http://localhost/slimblog/public', 10, '2013-11-18 18:02:48');
+	(1, 'blog', 'http://localhost/blog/public', 10, '2013-11-18 18:02:48');
 /*!40000 ALTER TABLE `settings` ENABLE KEYS */;
 
 CREATE TABLE IF NOT EXISTS `users` (

@@ -41,12 +41,7 @@
                 ><br />
               </div><br />
 
-              <label for="language" class="control-label">{{ include(template_from_string(lang.selectlanguage)) }}</label>
-              <select class="form-control" name="language" id="language">
-                  {% for lang in langs %}
-                      <option value="{{lang|e}}" {% if settings.language == lang %}selected{% endif %}>{{lang|e}}</option>
-                  {% endfor %}
-              </select><br />
+             
 
               <button class="btn btn-lg btn-primary btn-block" type="submit">{{ include(template_from_string(lang.update)) }}</button>
           </form>
